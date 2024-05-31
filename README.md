@@ -8,11 +8,11 @@ In this work, we introduce InternLSTM, a framework based on the features extract
 | :-----: | :---: | 
 |  GazePose  |   76.29 |
 |  InternLSTM  |   76.57 |
-|  InternLSTM^{*}  |   76.94 |
-|  InternLSTM^{**}  |   77.18 |
+|  InternLSTM*  |   76.94 |
+|  InternLSTM**  |   77.18 |
 ***
 
-Here, InternLSTM refers to the results obtained by training on the original training dataset and testing on the original test dataset. InternLSTM$^{*}$ refers to the results obtained by training on a dataset combining the original training dataset and the flipped training dataset, and testing on the original test dataset. InternLSTM$^{**}$ refers to the average results obtained by training on a dataset combining the original training set and the flipped training set, and testing on both the original test dataset and the flipped test dataset.
+Here, InternLSTM refers to the results obtained by training on the original training dataset and testing on the original test dataset. InternLSTM$* refers to the results obtained by training on a dataset combining the original training dataset and the flipped training dataset, and testing on the original test dataset. InternLSTM** refers to the average results obtained by training on a dataset combining the original training set and the flipped training set, and testing on both the original test dataset and the flipped test dataset.
 
 ## Quick Start
 
@@ -46,7 +46,7 @@ python run.py
 ```
 Specify the arguments listed in [common/config.py](./common/config.py) if you want to customize the training.
 
-Run the following script to start training for InternLSTM$^{*}$:
+Run the following script to start training for InternLSTM*:
 ```
 python run_mul_traindataset.py
 ```
@@ -58,11 +58,11 @@ Run the following script for inference InternLSTM:
 ```
 python run.py --eval --checkpoint ${checkpoint_path} --exp_path ${eval_output_dir}
 ```
-Run the following script for inference InternLSTM$^{*}$:
+Run the following script for inference InternLSTM*:
 ```
 python run_mul_traindataset.py --eval --checkpoint ${checkpoint_path} --exp_path ${eval_output_dir}
 ```
-If you want to inference InternLSTM$^{**}$, you need to run like InternLSTM$^{*}$:
+If you want to inference InternLSTM**, you need to run like InternLSTM*:
 ```
 python run_mul_traindataset.py --eval --checkpoint ${checkpoint_path} --exp_path ${eval_output_dir} --flip_test
 ```
